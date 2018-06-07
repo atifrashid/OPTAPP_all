@@ -1,0 +1,910 @@
+<!doctype html>
+<html lang="en">
+  <head>
+    <meta charset="utf-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1, shrink-to-fit=no">
+    <meta name="description" content="">
+    <meta name="author" content="">
+    
+    <title>Opt</title>
+
+    <!-- Styles -->
+    <link href="css/bootstrap.min.css" rel="stylesheet">
+    <link href="css/fontawesome-all.min.css" rel="stylesheet">
+    <link href="css/bootstrap-datepicker.min.css" rel="stylesheet">
+    <!-- Custom styles -->
+    <link href="css/styles.css" rel="stylesheet">
+    
+    <style>
+		 .fileupload{
+			
+			
+		 }
+		 .progress {
+			background-color: #d1ecf1;
+		 }
+		 .thumbnail{ border :1px solid #CCC;}
+		 
+	 </style>
+    
+  </head>
+
+  <body>
+
+    <main id="main">
+      <nav>
+        <div class="container">
+          <div class="row">
+            <div class="col-sm-12">
+              <ul class="list-inline list-unstyled menu">
+                <li class="">
+                  <a href="#" id="btnLogOut" class="btn btn-sm"><i class="fas fa-times"></i> Logout</a>
+                </li>
+                <li class="float-right">
+                  <a href="privacy.html" class="btn btn-sm"><i class="fas fa-file-alt"></i> Privacy</a>
+                </li>
+              </ul>
+            </div>
+          </div>
+        </div>
+      </nav>
+      <div class="info-cont">
+        <div class="container">
+          <div class="row">
+            <div class="col-sm-12">
+              <div class="info-box">
+                <div class="text-center opt-logo">
+                  <img src="images/logo.png" alt="Logo">
+                </div>
+                <form id="frmWarranty" method="post" class="info-form">
+                  <h3 class="field-heading">
+                    Customer Information
+                  </h3>
+                  <div class="form-group">
+                    <input type="text" class="form-control" name="first_name" id="first_name" placeholder="First Name"  required>  
+                  </div>
+                  <div class="form-group">
+                    <input type="text" class="form-control" name="last_name" id="last_name" placeholder="Last Name"  required>  
+                  </div>    
+                  <div class="form-group">
+                    <input type="text" class="form-control" name="address" id="address" placeholder="Address"  required>  
+                  </div>
+                  <div class="form-group">
+                    <input type="text" class="form-control" name="city" id="city" placeholder="City"  required>  
+                  </div>
+                  
+                   <div class="form-group">
+                    <select name="state" id="state" class="custom-select required">
+                      <option value="">State</option>
+                        <option value="Alabama">Alabama</option>
+                        <option value="Alaska">Alaska</option>
+                        <option value="Arizona">Arizona</option>
+                        <option value="Arkansas">Arkansas</option>
+                        <option value="California">California</option>
+                        <option value="Colorado">Colorado</option>
+                        <option value="Connecticut">Connecticut</option>
+                        <option value="Delaware">Delaware</option>
+                        <option value="Dist. of Columbia">Dist. of Columbia</option>
+                        <option value="Florida">Florida</option>
+                        <option value="Georgia">Georgia</option>
+                        <option value="Hawaii">Hawaii</option>
+                        <option value="Idaho">Idaho</option>
+                        <option value="Illinois">Illinois</option>
+                        <option value="Indiana">Indiana</option>
+                        <option value="Iowa">Iowa</option>
+                        <option value="Kansas">Kansas</option>
+                        <option value="Kentucky">Kentucky</option>
+                        <option value="Louisiana">Louisiana</option>
+                        <option value="Maine">Maine</option>
+                        <option value="Maryland">Maryland</option>
+                        <option value="Massachusetts">Massachusetts</option>
+                        <option value="Michigan">Michigan</option>
+                        <option value="Minnesota">Minnesota</option>
+                        <option value="Mississippi">Mississippi</option>
+                        <option value="Missouri">Missouri</option>
+                        <option value="Montana">Montana</option>
+                        <option value="Nebraska">Nebraska</option>
+                        <option value="Nevada">Nevada</option>
+                        <option value="New Hampshire">New Hampshire</option>
+                        <option value="New Jersey">New Jersey</option>
+                        <option value="New Mexico">New Mexico</option>
+                        <option value="New York">New York</option>
+                        <option value="North Carolina">North Carolina</option>
+                        <option value="North Dakota">North Dakota</option>
+                        <option value="Ohio">Ohio</option>
+                        <option value="Oklahoma">Oklahoma</option>
+                        <option value="Oregon">Oregon</option>
+                        <option value="Pennsylvania">Pennsylvania</option>
+                        <option value="Rhode Island">Rhode Island</option>
+                        <option value="South Carolina">South Carolina</option>
+                        <option value="South Dakota">South Dakota</option>
+                        <option value="Tennessee">Tennessee</option>
+                        <option value="Texas">Texas</option>
+                        <option value="Utah">Utah</option>
+                        <option value="Vermont">Vermont</option>
+                        <option value="Virginia">Virginia</option>
+                        <option value="Washington">Washington</option>
+                        <option value="West Virginia">West Virginia</option>
+                        <option value="Wisconsin">Wisconsin</option>
+                        <option value="Wyoming">Wyoming</option>
+                    </select>
+                    
+                    <select name="province" id="province" style="display: none">
+							<option value="">Province</option>
+                  	<option value="Alberta">Alberta</option>
+                  	<option value="British Columbia">British Columbia</option>
+                  	<option value="Manitoba">Manitoba</option>
+                  	<option value="New Brunswick">New Brunswick</option>
+                  	<option value="Newfoundland">Newfoundland</option>
+                  	<option value="Nova Scotia">Nova Scotia</option>
+                  	<option value="Ontario">Ontario</option>
+                  	<option value="Prince Edward Island">Prince Edward Island</option>
+                  	<option value="Quebec">Quebec</option>
+                  	<option value="Saskatchewan">Saskatchewan</option>
+                  	<option value="Northwest Territories">Northwest Territories</option>
+                  	<option value="Nunavut">Nunavut</option>
+                  	<option value="Yukon">Yukon</option>
+                    </select>
+                    
+                  </div>
+                  
+                  
+                  
+                  <div class="form-group">
+                    <input type="number" class="form-control" name="post_code" id="zip" placeholder="Zip Code" required>  
+                  </div>
+                  <div class="form-group">
+                    <input type="text" class="form-control" name="phone_number" id="phone_number" placeholder="Phone"  required>  
+                  </div>
+                  <div class="form-group">
+                    <input type="email" class="form-control" name="dealer_email" id="email" placeholder="Email"  required>  
+                  </div>
+                  <h3 class="field-heading">
+                    VEHICLE IDENTIFICATION
+                  </h3>  
+                  <div class="form-group">
+                    <input placeholder="Make" type="text"  id="vehicle_make" autocomplete="off" name="vehicle_make" class="form-control required" value="" />
+                  </div>
+                  <div class="form-group">
+                    <input placeholder="Year" type="number"  id="vehicle_year" autocomplete="off" name="vehicle_year" class="form-control required" value="" />
+                  </div>
+                  <div class="form-group">
+                    <input placeholder="Model" type="text"  autocomplete="off" id="vehicle_model" name="vehicle_model" class="form-control required" value="" />
+                  </div>
+                  <div class="form-group">
+                    <input placeholder="Color" type="text"  name="vahicle_color" autocomplete="off" id="vahicle_color" class="form-control required" value="" />
+                  </div>
+                  <div class="form-group">
+                    <input placeholder="License Plate Number" type="text" id="vehicle_registration" autocomplete="off" name="vehicle_registration" class="form-control required" value="" />
+                  </div>
+                  <div class="field-group input-group mb-3">
+                    <input type="text" class="form-control" placeholder="VIN/Chassis Number" name="vehicle_vin" id="vehicle_vin" required>
+                    <div class="input-group-append">
+                      <button class="btn btn-outline-secondary" id="btnBarcode" type="button"><i class="fas fa-barcode"></i></button>
+                    </div>
+                  </div>
+                  <div class="form-group">
+                    <input placeholder="Mileage" type="number"  name="vehicle_mileage" autocomplete="off" id="vehicle_mileage" class="form-control required" />
+                  </div>  
+                  <h3 class="field-heading">
+                    Application Date
+                  </h3>
+                  <div class="form-group">
+                    <select class="form-control required" name="application_date" id="application_date" placeholder="Application Date" >
+                    
+							</select>  
+                  </div>   
+                  <h3 class="field-heading">
+                    Waranty Services
+                  </h3>     
+                  <div class="form-group with-hidden-fields first-hdn-field ws">
+                    <div class="custom-control custom-checkbox hidden-fields-checkbox">                      
+                      <input type="checkbox" name="warranty[]" id="chk_1" value="OptiCoat" class="custom-control-input"/>
+                      <label class="custom-control-label" for="chk_1">Opti-Coat Exterior Warranty</label>
+                    </div> 
+                    <div class="hidden-fields">                     
+                      <div class="form-group">
+                        <input placeholder="Warranty Number"  autocomplete="off" type="text" class="form-control required" name="serial_number" id="serial_number" /> 
+                      </div>
+                      <div class="form-group">
+                        <input type="text" autocomplete="off"  placeholder="Activation Code" id="activation_code " name="activation_code" class="form-control required"  />  
+                      </div>
+                      <div class="form-group">
+                        <input type="text" autocomplete="off"  placeholder="Opti-Coat Pro Lot No" id="opticoat_pro_lot_no" name="opticoat_pro_lot_no" class="form-control required"  />  
+                      </div> 
+                      <div class="form-group">
+                        <input type="text" autocomplete="off"  placeholder="Opti-Coat Pro+ Lot No" id="opticoat_prop_lot_no" name="opticoat_prop_lot_no" class="form-control "  />  
+                      </div> 
+                      <div class="form-group">
+                        <input type="text"  autocomplete="off" id="opticoat_pre_damage"  placeholder="Note pre-exsisting damage" name="opticoat_pre_damage" class="form-control required"  >  
+                      </div> 
+                      <div class="form-group">
+                        <input type="text" autocomplete="off"  placeholder="Name(s) of authorized installer(s)" id="opticoat_authorized_installer" name="opticoat_authorized_installer" class="form-control required"  />  
+                      </div>                      
+                    </div>
+                  </div>
+                  <div class="form-group with-hidden-fields ws">
+                    <div class="custom-control custom-checkbox hidden-fields-checkbox">
+                      <input type="checkbox" name="warranty[]" value="Opti-Guard" class="custom-control-input" id="chk_2">
+                      <label class="custom-control-label" for="chk_2">Opti-Guard Interior Warranty</label>
+                    </div> 
+                    <div class="hidden-fields">                     
+                      <div class="form-group">
+                        <input placeholder="Warranty Number"   type="text" id="pcode1" name="pcode1" class="form-control required" />  
+                      </div>
+                      <div class="form-group">
+                        <input type="text"  autocomplete="off"   placeholder="Activation Code" id="pcode2" name="pcode2" class="form-control required"  />  
+                      </div>
+                      <div class="form-group">
+                        <input type="text" autocomplete="off" placeholder="Leather Lot No." id="optiguard_leather_lot_no" name="optiguard_leather_lot_no" class="form-control " />  
+                      </div>
+                      <div class="form-group">
+                        <input type="text" autocomplete="off" placeholder="Note pre-exsisting damage " name="optiguard_pre_damage" id="optiguard_pre_damage" class="form-control required" >  
+                      </div>
+                      <div class="form-group">
+                        <input type="text" autocomplete="off"   placeholder="Name(s) of authorized installer(s)" id="optiguard_authorized_installer" name="optiguard_authorized_installer"  class="form-control required"   />  
+                      </div>                      
+                    </div>
+                  </div>
+                  
+                  <div class="form-group with-hidden-fields ws">
+                    <div class="custom-control custom-checkbox hidden-fields-checkbox">
+                      <input type="checkbox" name="warranty[]" value="Paint-Guard" class="custom-control-input" id="chk_3">
+                      <label class="custom-control-label" for="chk_3">Paint Guard <span style="font-size:13px; color:#666">(Credits Available : <span id="sp_paint_credits"></span>)</span></label>
+                    </div> 
+                    <div class="hidden-fields">                     
+                      <div class="form-group">
+                        <input type="text" autocomplete="off" placeholder="Paint Guard Lot No" id="paintguard_lot_no" name="paintguard_lot_no" class="form-control required" />  
+                      </div>
+                      <div class="form-group">
+                        <input type="text" autocomplete="off" placeholder="Note Pre-Existing Damage" name="paintguard_pre_damage" id="paintguard_pre_damage" class="form-control required" >  
+                      </div>
+                      <div class="form-group">
+                        <input type="text" autocomplete="off"   placeholder="Name(s) of Authorized Installer(s)" id="paintguard_authorized_installer" name="paintguard_authorized_installer"  class="form-control required"  />  
+                      </div>                      
+                    </div>
+                  </div>
+                  
+                  <div class="form-group with-hidden-fields ws">
+                    <div class="custom-control custom-checkbox hidden-fields-checkbox">
+                      <input type="checkbox" name="warranty[]" value="Interior-Coating" class="custom-control-input" id="chk_4">
+                      <label class="custom-control-label" for="chk_4">Interior Coating</label>
+                    </div> 
+                    <div class="hidden-fields">                     
+                      <div class="form-group">
+                        <input type="text" autocomplete="off"   placeholder="Note pre-exsisting damage" name="interior_pre_damage" id="interior_pre_damage" class="form-control required" > 
+                      </div>
+                      <div class="form-group">
+                        <input type="text" autocomplete="off"   placeholder="Name(s) of authorized installer(s)" id="interior_authorized_installer" name="interior_authorized_installer"  class="form-control required" />  
+                      </div>                                            
+                    </div>
+                  </div>
+                  <div class="form-group with-hidden-fields last-hdn-field image-map ws">
+                    <div class="custom-control custom-checkbox hidden-fields-checkbox">
+                      <input type="checkbox" name="warranty[]" value="PPF" class="custom-control-input" id="chk_5">
+                      <label class="custom-control-label" for="chk_5">PPF</label>
+                    </div> 
+                    <div class="hidden-fields">   
+                      <p>
+                        Please select all the sections where PPF applied
+                      </p>                  
+                      <img src="images/flatbody.jpg" id="flatbody" usemap="#MapCar" border="0" />
+                      <map name="MapCar" id="MapCar">
+                       <area state="S1" alt="" title="" href="#" coords="106,311,133,303,159,301,158,325,142,332,132,348,127,362,106,364,101,350,89,347,95,328,113,330,117,323,116,330,120,313" shape="poly">
+                       <area state="S2" alt="" title="" href="#" coords="161,301,208,295,202,328,210,367,200,365,185,331,161,325" shape="poly">
+                       <area state="S3" alt="" title="" href="#" coords="205,330,308,328,312,361,212,364,207,346,207,339" shape="poly">
+                       <area state="S4" alt="" title="" href="#" coords="308,329,394,328,380,346,374,363,337,363,313,361,312,346" shape="poly">
+                       <area state="S5" alt="" title="" href="#" coords="283,296,308,295,307,329,207,329,206,313,209,298,237,296,255,296" shape="poly">
+                       <area state="S6" alt="" title="" href="#" coords="312,298,311,329,394,328,404,323,405,308,398,296,364,297,344,297,327,297" shape="poly">
+                       <area state="S7" alt="" title="" href="#" coords="484,328,496,333,496,347,488,351,487,361,472,362,444,362,439,349,434,337,425,327" shape="poly">
+                       <area state="S8" alt="" title="" href="#" coords="398,296,411,297,427,298,443,298,456,297,468,296,487,302,493,309,483,310,482,328,427,329,409,323,403,303" shape="poly">
+                       <area state="S9" alt="" title="" href="#" coords="107,133,101,171,100,193,109,192,111,198,108,203,100,203,101,229,108,267,149,266,148,135" shape="poly">
+                       <area state="S10" alt="" title="" href="#" coords="150,133,208,134,202,165,201,198,201,233,208,264,179,266,151,264" shape="poly">
+                       <area state="S11" alt="" title="" href="#" coords="15,126,24,125,30,118,38,124,38,151,36,178,38,233,37,274,33,278,26,272,18,272,13,265" shape="poly">
+                       <area state="S12" alt="" title="" href="#" coords="36,126,44,122,54,129,55,146,56,166,51,171,51,181,51,196,51,218,52,229,55,234,54,267,52,272,40,272" shape="poly">
+                       <area state="S13" alt="" title="" href="#" coords="70,133,82,267" shape="rect">
+                       <area state="S14" alt="" title="" href="#" coords="542,122,551,119,555,125,564,130,565,142,565,170,567,203,566,233,565,265,559,271,561,270,549,278,542,271" shape="poly">
+                       <area state="S15" alt="" title="" href="#" coords="542,123,531,119,517,129,521,169,519,219,517,271,534,277,543,272" shape="poly">
+                       <area state="S16" alt="" title="" href="#" coords="102,34,128,37,133,56,143,66,152,71,161,73,161,99,145,97,133,95,122,92,106,87,120,87,113,71,92,69,93,52,101,48" shape="poly">
+                       <area state="S17" alt="" title="" href="#" coords="163,75,177,71,187,65,196,45,197,37,211,34,202,71,205,93,210,107,185,101,163,100" shape="poly">
+                       <area state="S18" alt="" title="" href="#" coords="212,38,256,36,311,35,306,70,289,69,265,70,236,70,207,69,207,54" shape="poly">
+                       <area state="S19" alt="" title="" href="#" coords="207,70,309,69,311,101,295,101,282,101,267,101,251,101,240,101,233,102,222,101,212,103,208,81" shape="poly">
+                       <area state="S20" alt="" title="" href="#" coords="314,36,374,37,383,59,392,69,381,70,372,70,357,69,338,69,326,69,308,70" shape="poly">
+
+                       <area state="S21" alt="" title="" href="#" coords="447,37,483,35,489,46,496,49,495,63,491,70,482,68,472,68,462,68,451,69,441,69,428,69" shape="poly">
+                       <area state="S22" alt="" title="" href="#" coords="495,88,481,89,479,71,426,69,417,74,404,72,405,85,401,102,419,101,433,102,440,104,446,102,454,102,464,102,471,101,487,98" shape="poly">
+                       <area state="S23" alt="" title="" href="#" coords="276,148,317,149,316,148,340,148,363,147,384,147,379,167,380,191,380,216,384,250,368,250,276,251,276,226,281,233,306,233,314,225,313,174,305,167,285,167,274,177" shape="poly">
+                       <area state="S24" alt="" title="" href="#" coords="445,159,448,132,447,136,452,135,494,133,497,156,499,185,501,213,497,244,493,266,478,264,469,264,458,265,449,264,452,264,452,266,447,264,446,255,447,249,446,217,446,194" shape="poly">
+                       <area state="S25" alt="" title="" href="#" coords="259,149,274,149,275,252,260,253,255,202" shape="poly">
+                       <area state="S26" shape="poly" coords="310,70,398,71,403,82,399,98,395,103,374,102,351,102,331,101,312,101" href="#"  alt="">
+
+                       </map>
+                      <p>Credits for Selected Area : <span id="spArea">0</span></p>
+                      
+                      
+                      <div class="form-group">
+                        <input type="text" autocomplete="off"   placeholder="PPF Serial" name="ppf_serial" id="ppf_serial" class="form-control required PPFInput" > 
+                      </div>
+                      <div class="form-group">
+                        <input type="text" autocomplete="off"   placeholder="Alternate Serial" id="ppf_serial2" name="ppf_serial2"  class="form-control PPFInput" />  
+                      </div>      
+                      
+                      <div class="form-group">
+                        <input type="text" autocomplete="off"   placeholder="NOTES" id="ppf_notes" name="ppf_notes"  class="form-control" />
+                        <input type="hidden" name="hdPPF" id="hdPPF" value=""/>  
+                      </div>    
+                      
+                      </div>
+                  </div>
+                  <br/>
+                  <h3 class="field-heading">
+                    BEFORE & AFTER IMAGES
+                  </h3>  
+                 
+	<div class="">
+		<div class="alert alert-info">
+			<h5 style="color: #000; font-size: 1.17em">Before Images</h5>
+			<input type="hidden" name="hdBF" id="hdBF" value="">
+			
+			<button  type="button" class="btn btn-success" onClick="uploadImageBF();" >
+				  <i class="fa fa-plus"></i> Add Picture
+			</button> 
+			<i style="display: none" class="tempLoaderBF fa fa-circle-notch fa-spin"></i>
+
+			<div id="spFiles_BF" class="row" style="margin-top: 10px;"></div>
+			
+			<br><br>
+			
+			<h5 style="color: #000; font-size: 1.17em">After Images</h5>
+			<input type="hidden" name="hdAF" id="hdAF" value="">
+			
+			<button  type="button" class="btn btn-success" onClick="uploadImageAF();" >
+				  <i class="fa fa-plus"></i> Add Picture
+			</button> 
+			<i style="display: none" class="tempLoaderAF fa fa-circle-notch fa-spin"></i>
+
+			<div id="spFiles_AF" class="row" style="margin-top: 10px;"></div>
+			<br>
+			
+			
+			<div class="clearfix"></div>
+		</div>
+	</div> 
+                 
+                  
+                  
+                  <input type="hidden" name="dealer_id" id="hdDealerId" value="" />
+                  <input type="hidden" name="dealer_country" id="hdDealerCountry" value="" />
+                 
+                  
+                  
+                  <button type="submit" value="submit" class="btn btn-block btn-send">
+                    Submit
+                  </button>
+                </form>                
+              </div>
+              <div class="loader">
+                <i class="fas fa-spinner fa-pulse"></i>
+              </div>
+            </div>
+          </div>
+        </div>
+      </div>
+    </main>        
+
+    <!-- Bootstrap core JavaScript
+    ================================================== -->
+    <!-- Placed at the end of the document so the pages load faster -->
+    <script src="cordova.js"></script> 
+    <script src="js/jquery-3.3.1.min.js" type="text/javascript"></script>    
+    <script src="js/bootstrap.min.js" type="text/javascript"></script>
+    <script src="js/jquery.validate.min.js" type="text/javascript"></script>    
+    <script src="js/moment.js" type="text/javascript"></script>    
+    <script src="js/jquery.imagemapster.min.js" type="text/javascript"></script>
+    
+    <script src="js/jquery.ui.widget.js"></script>
+    <script src="js/jquery.iframe-transport.js"></script>
+    <script src="js/jquery.fileupload.js"></script>
+    
+    <script src="js/scripts.js" type="text/javascript"></script>
+    
+<script>
+	
+var PPF_Credit_Map = {};
+var PPFCheck_Response = null;
+var PPF_area = 0;
+ 
+function calculateArea(){
+	var Sltds = $('#flatbody').mapster('get');
+	Sltds = Sltds.split(',');
+	//console.log( Sltds );
+	PPF_area = 0
+	for(var i=0; i<Sltds.length; i++){
+		//console.log( PPF_Credit_Map[Sltds[i]] );
+		if( Sltds[i] != '' ){
+			PPF_area = PPF_area + parseInt(PPF_Credit_Map[Sltds[i]]);	
+		}
+	}
+	console.log( PPF_area );
+	$('#spArea').html(PPF_area);
+	PPFLocalCalculate(PPFCheck_Response);
+}		
+		
+function mapClick(Data){
+	if(Data.selected == true){
+		$('#tx_'+Data.key).focus();	
+	}
+	setTimeout(function(){ calculateArea() }, 300);
+	//console.log($('#flatbody').mapster('get'));
+}
+function PPFLocalCalculate(data){
+	
+}	
+
+function LoadPageData(){
+	
+	var fromData = {
+		DealerId : localStorage.getItem('DealerId')
+	};
+	
+	$.ajax({
+		type: "POST",
+		url: "https://opticoat.com/opt_app/ajax203.php?handler=getWarrantyPreload",
+		data: fromData,
+		dataType: 'json',
+		beforeSend: function() { $('<div class="formOverlay"><i class="tempLoader fa fa-circle-notch fa-spin"></i></div>').appendTo('body');   },
+		complete: function() { $("div.formOverlay").remove(); },
+	}).done(function(data){
+
+		if (data.Success == 'true') {
+			
+			
+			$('#hdDealerId').val(localStorage.getItem('DealerId'));
+			$('#hdDealerCountry').val( data.dealer_country );
+			
+			$('#sp_paint_credits').html(data.credits_paint);
+			PPF_Credit_Map = JSON.parse(data.PPF_Credit_Map);
+			
+			/*
+			1=> Opti-Coat Exterior Warranty
+			2=> Opti-Guard Interior Warranty
+			3=> Paint Guard
+			4=> Interior Coating
+			5=> PPF */
+			
+			if( data.dealer_class == 'Motorcycle Dealership' ){
+				$('#chk_2').closest('div.ws').hide();
+				$('#chk_3').closest('div.ws').hide(); 
+				$('#chk_4').closest('div.ws').hide(); 
+				$('#chk_5').closest('div.ws').hide(); 
+			}else{
+				if( data.dealer_class != 'Installer' ){		$('#chk_3').closest('div.ws').hide(); }
+				if( data.dealer_class != 'Dealership' ){		$('#chk_4').closest('div.ws').hide(); }
+			} 
+
+		} else {
+
+			BAlert.find('.modal-title').html('Login Error');
+			BAlert.find('.modal-body').html('<p class="text-danger">'+data.Msg+'</p>');
+			BAlert.modal();	
+
+		}
+
+	}).fail( ajaxError );
+}	
+
+function PPFCheck(){
+	
+	
+	if( $("#ppf_serial").val() == $("#ppf_serial2").val() ){
+		$("#ppf_serial2").val('');
+	}
+				
+	var formData = {
+		'ppf_serial': $("#ppf_serial").val(),
+		'ppf_serial2': $("#ppf_serial2").val(),
+		'dealer_id': localStorage.getItem('DealerId')
+	};
+
+	$( '.tempLoader' ).remove();
+	$('#ppf_serial').parent().append('<i class="tempLoader fa fa-circle-notch fa-spin"></i>');
+	
+	$.ajax({
+		type: "POST",
+		url: "https://opticoat.com/opt_app/ajax203.php?handler=PPFCheck",
+		data: formData,
+		dataType: 'json',
+	}).done(function(data){
+		
+			$( '.tempLoader' ).remove();
+
+			PPFCheck_Response = data;
+			if ( data.Success == 'true' ) {
+
+				$( 'span.tempLoader' ).remove();
+				if( data.ppf_serial != '' ){
+					if(  data.ppf_valid == 'true' ){
+						$('#ppf_serial').parent().append('<label class="tempLoader success">Available Credits : '+data.ppf_credits+' </label>');
+					}else{
+						$('#ppf_serial').parent().append('<label class="tempLoader error">Invalid Serial</label>');
+					}
+				}
+
+				if( data.ppf_serial2 != '' ){
+					if(  data.ppf_valid2 == 'true' ){
+						$('#ppf_serial2').parent().append('<label class="tempLoader success">Available Credits : '+data.ppf_credits2+' </label>');
+					}else{
+						$('#ppf_serial2').parent().append('<label class="tempLoader error">Invalid Serial</label>');
+					}
+				}
+				
+				PPFLocalCalculate(PPFCheck_Response);
+
+			}else {
+				var st = data.Msg;
+				st = st.replace( '\\n', '\n' );
+				alert( st );
+			}
+			if ( data.JS ) {
+				eval( data.JS );
+			}
+	}).fail( ajaxError );
+
+
+}// end function
+	
+
+function QRonSuccess(result) {
+
+	if (result.cancelled == true) {
+		return false;
+	}
+	var code = result.text;
+	$('#vehicle_vin').val(code);
+	//alert(code);
+}
+
+function QRFailure(message) {
+	alert_error('Barcode Scanner Failed, please check app permissions. '+message, 'Scanner Error');
+}	
+	
+async function saveFormDate() {
+	var str = $("#frmWarranty").serialize();
+	localStorage.setItem('formdata', str);
+}
+
+async function restoreData(){
+	if (localStorage.getItem('formdata')) {
+		var str = decodeURIComponent((localStorage.getItem('formdata') + '').replace(/\+/g, '%20'));
+		//var str = urldecode(jsData);
+		//alert(str);
+		var pairs = str.split('&');
+		var obj = {},
+			p, idx, val;
+		for (var i = 0, n = pairs.length; i < n; i++) {
+			p = pairs[i].split('=');
+			//alert(pairs[i]);
+			idx = p[0];
+			var ele = $('[name="' + idx + '"]');
+			var type = ele.attr('type');
+			if (type == 'checkbox') {
+				//$(':checkbox[value="' + p[1] + '"]').attr("checked", "checked").trigger('change');
+			} else if (type == 'number') {
+				ele.val(p[1]);
+			} else if (type == 'text') {
+				ele.val(p[1]);
+			} else if (type == 'date') {
+				ele.val(p[1]);
+			} else if (type == 'email') {
+				ele.val(p[1]);
+			} else if (type == 'radio') {
+				$(':radio[value="' + p[1] + '"]').attr("checked", "checked");
+				$(':radio[value="' + p[1] + '"]').trigger('change');
+			} else if (ele.is('select')) {
+				ele.val(p[1]);
+				ele.trigger('change');
+			} else if (ele.is('textarea')) {
+				ele.val(p[1]);
+			}
+		}
+	}
+}
+	
+$(document).ready(function() {
+	
+	
+	$(":input").blur(function () {
+		saveFormDate();
+	});
+	
+	if(empty(localStorage.getItem('DealerId'))){
+		document.location = 'login.html'; 
+	}else{
+		
+		if( localStorage.getItem('Country') == 'CA' ){
+			
+			var $options = $("#province > option").clone();
+			$('#state').empty().append($options);
+			
+		}
+		
+		LoadPageData();
+	}
+	
+	
+	$('.hidden-fields-checkbox input[type=checkbox]').click(function() {
+		$(this).parent('.hidden-fields-checkbox').toggleClass('active-check');
+		$(this.parentNode).next(".hidden-fields").toggleClass('active', this.checked);
+	});
+
+	
+	restoreData();
+	
+	var mDate = moment();
+	for(var i=0; i<=60; i++ ){
+		$('#application_date').append('<option value="'+mDate.format('Y-MM-DD')+'">'+mDate.format('ddd, D MMM Y')+'</option>');
+		mDate.subtract(1, 'days');
+	}
+	
+	$('#btnBarcode').on('click', function (e) {
+		try {
+			cordova.exec(QRonSuccess, QRFailure, 'VinBarScanner', 'scan', []);
+			
+		} catch (err) {
+			alert_error('Barcode Scanner Failed, please check app permissions. ' + err, 'Scanner Error');
+		}
+		e.preventDefault();
+	});
+	
+
+	$('#flatbody').mapster({
+		mapKey: 'state',
+		singleSelect: false,
+		onClick: mapClick
+	});
+	
+	$('input.PPFInput').on('blur', function(){
+		PPFCheck();
+	});		
+	
+	$("#frmWarranty").validate({
+		
+		submitHandler: function (form) {
+			
+			if( $('input[name="warranty[]"]:checked').length == 0 ){
+				alert_error('Please check at least one warranty service to proceed!');
+				return false;
+			}
+			
+			var LotPat = /(L)[0-9]{6}[A-z]{1}/i;
+			
+			if( $('#chk_1').prop('checked') == true ){
+				if ( LotPat.test( $( '#opticoat_pro_lot_no' ).val() ) == false ) {
+					alert_error( 'OPTI-COAT PRO LOT NO. is not valid!' );
+					$( '#opticoat_pro_lot_no' ).focus();
+					return false;
+				}
+			}	
+			
+			
+			if( $('#chk_2').prop('checked') == true ){
+				if( $( '#optiguard_leather_lot_no' ).val() != '' ){
+					if ( LotPat.test( $( '#optiguard_leather_lot_no' ).val() ) == false ) {
+						alert_error( 'Leather Lot No. is not valid!' );
+						$( '#optiguard_leather_lot_no' ).focus();
+						return false;
+					}
+				}
+			}
+			
+			if( $('#chk_5').prop('checked') == true ){
+				
+				if(empty(PPFCheck_Response)){
+					PPFCheck();
+					return false;
+				}
+				
+				var sppf = $('#flatbody').mapster('get');
+				$('#hdPPF').val( sppf );
+				if( sppf.length < 2 ){
+					alert_error('Please select at least 1 body section!');
+					return false;
+				}
+				var AvCr = 0;
+				AvCr += (PPFCheck_Response.ppf_valid=='true')?parseInt(PPFCheck_Response.ppf_credits):0;
+				AvCr += (PPFCheck_Response.ppf_valid2=='true')?parseInt(PPFCheck_Response.ppf_credits2):0;
+
+				if( AvCr < PPF_area  ){
+					if( $("#ppf_serial2").val() == '' ){
+						alert_error('PPF credits are insufficient, please enter alternate PPF to proceed');
+					}else{
+						alert_error('PPF credits are insufficient, please enter differnt serials to proceed');
+					}
+					return false;
+				}
+			}  
+			
+			var formData = $("#frmWarranty").serialize();
+			//console.log(formData);
+			//return false;
+			
+			$.ajax({
+				type: "POST",
+				url: "https://opticoat.com/opt_app/ajax203.php?handler=addWarranty",
+				data: formData,
+				dataType: 'json',
+				beforeSend: function() { $('<div class="formOverlay"><i class="tempLoader fa fa-circle-notch fa-spin"></i></div>').appendTo('body');   },
+				complete: function() { $("div.formOverlay").remove(); },
+			}).done(function(data){
+			
+				if (data.Success == 'true') {
+
+					
+					BAlert.find('.modal-title').html('Success');
+					BAlert.find('.modal-body').html('<p class="text-success">'+data.Msg+'</p>');
+					BAlert.find('');
+					BAlert.modal();	
+					
+					
+					$('#frmWarranty').trigger("reset");
+					$('#spFiles_BF').html('');
+					$('#spFiles_AF').html('');
+					$('#hdBF').val('');
+					$('#hdAF').val('');
+					
+					/*if (localStorage.getItem('DealerClass') == 'Dealership')
+						$("#sp_Dealership").show();
+					else
+						$("#sp_Dealership").hide();
+
+					if(localStorage.getItem('DalerClass') == 'Motorcycle Dealership' ){
+						$("#spOptiGuard").hide();
+					}else{
+						$("#spOptiGuard").show();
+					}*/
+					//document.location = 'form.html';
+					
+
+				} else {
+					
+					BAlert.find('.modal-title').html('Registration Error');
+					BAlert.find('.modal-body').html('<p class="text-danger">'+data.Msg+'</p>');
+					BAlert.modal();	
+					
+				}
+				
+			}).fail( ajaxError );
+			
+			
+			
+		}//submithandler
+		
+	});
+	
+	
+	
+		 
+});
+	
+
+function uploadImageBF() {
+	//alert('uploadImageBF');
+	navigator.camera.getPicture(
+	function(uri) {
+		try {
+			//spPics
+			var imageURI = uri;
+			if (!imageURI) {
+				return;
+			}else{
+				$('.tempLoaderBF').show();
+			}
+			server = 'https://opticoat.com/opt_app/UploadHandler.php'; //?chid='+localStorage.getItem('userId');
+			var options = new FileUploadOptions();
+			options.fileKey = "file";
+			options.fileName = imageURI.substr(imageURI.lastIndexOf('/') + 1);
+			options.mimeType = "image/jpeg";
+			options.chunkedMode = false;
+
+			// Transfer picture to server
+			var ft = new FileTransfer();
+			ft.upload(imageURI, server, function(r){
+				$('.tempLoaderBF').hide();
+				if (r.response.match("^Error")){
+					//$('#picture_msg').html(r.response);
+				}else{ // Success
+					var H = '<div class="col-3"><img class="thumbnail" data-name="'+r.response+'" src="https://opticoat.com/pics/warranty_images/'+r.response+'" alt=""></div>'; 
+					$('#spFiles_BF').append(H);
+					
+					var V = $('#hdBF').val();
+					$('#hdBF').val( V +','+ r.response );
+				}
+			},
+
+			function(error) {
+				BAlert.find('.modal-header h3').html('<i class="fa fa-exclamation-triangle"></i> Error');
+				BAlert.find('.modal-body').html('<p class="text-danger">'+"Upload Failed : Code = " + error.code+'</p>');
+				BAlert.modal();
+			}, options);
+
+		} catch (exce) {
+			alert(exce);
+		}
+	},
+
+	function(e) {
+		alert(e);
+		console.log("Error getting picture: " + e);
+	}, {
+		quality: 70,
+		//allowEdit : true,
+		destinationType: navigator.camera.DestinationType.FILE_URI,
+		sourceType: navigator.camera.PictureSourceType.PHOTOLIBRARY,
+		targetWidth: 1024,
+  		targetHeight: 1024
+	});
+}
+
+function uploadImageAF() {
+	//alert('uploadImageBF');
+	navigator.camera.getPicture(
+	function(uri) {
+		try {
+			//spPics
+			var imageURI = uri;
+			if (!imageURI) {
+				return;
+			}else{
+				$('.tempLoaderAF').show();
+			}
+			server = 'https://opticoat.com/opt_app/UploadHandler.php'; //?chid='+localStorage.getItem('userId');
+			var options = new FileUploadOptions();
+			options.fileKey = "file";
+			options.fileName = imageURI.substr(imageURI.lastIndexOf('/') + 1);
+			options.mimeType = "image/jpeg";
+			options.chunkedMode = false;
+
+			// Transfer picture to server
+			var ft = new FileTransfer();
+			ft.upload(imageURI, server, function(r){
+				$('.tempLoaderAF').hide();
+				if (r.response.match("^Error")){
+					//$('#picture_msg').html(r.response);
+				}else{ // Success
+					var H = '<div class="col-3"><img class="thumbnail" data-name="'+r.response+'" src="https://opticoat.com/pics/warranty_images/'+r.response+'" alt=""></div>'; 
+					$('#spFiles_AF').append(H);
+					
+					var V = $('#hdAF').val();
+					$('#hdAF').val( V +','+ r.response );
+				}
+			},
+
+			function(error) {
+				BAlert.find('.modal-header h3').html('<i class="fa fa-exclamation-triangle"></i> Error');
+				BAlert.find('.modal-body').html('<p class="text-danger">'+"Upload Failed : Code = " + error.code+'</p>');
+				BAlert.modal();
+			}, options);
+
+		} catch (exce) {
+			alert(exce);
+		}
+	},
+
+	function(e) {
+		alert(e);
+		console.log("Error getting picture: " + e);
+	}, {
+		quality: 70,
+		//allowEdit : true,
+		destinationType: navigator.camera.DestinationType.FILE_URI,
+		sourceType: navigator.camera.PictureSourceType.PHOTOLIBRARY,
+		targetWidth: 1024,
+  		targetHeight: 1024
+	});
+}	
+	
+</script>
+
+
+  </body>
+</html>

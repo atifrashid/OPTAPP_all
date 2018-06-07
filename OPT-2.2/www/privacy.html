@@ -1,0 +1,117 @@
+<!doctype html>
+<html lang="en">
+  <head>
+    <meta charset="utf-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1, shrink-to-fit=no">
+    <meta name="description" content="">
+    <meta name="author" content="">
+    
+    <title>Opt</title>
+
+    <!-- Styles -->
+    <link href="css/bootstrap.min.css" rel="stylesheet">
+    <link href="css/fontawesome-all.min.css" rel="stylesheet">
+    <!-- Custom styles -->
+    <link href="css/styles.css" rel="stylesheet">
+  </head>
+
+  <body>
+
+    <main id="main">
+      <nav>
+        <div class="container">
+          <div class="row">
+            <div class="col-sm-12">
+              <ul class="list-inline list-unstyled menu">
+                <li class="">
+                  <a href="form.html" class="btn btn-sm"><i class="fas fa-arrow-left"></i> Back</a>
+                </li>
+                <li class="float-right">
+                  <a href="#" id="btnLogOut" class="btn btn-sm"><i class="fas fa-times"></i> Logout</a>
+                </li>
+              </ul>
+            </div>
+          </div>
+        </div>
+      </nav>
+      <div class="privacy-cont">
+        <div class="container">
+          <div class="row">
+            <div class="col-sm-12">
+					<div class="privacy">
+						
+						
+						
+					</div>
+            </div>
+          </div>
+        </div>
+      </div>
+    </main>         
+
+    <!-- Bootstrap core JavaScript
+    ================================================== -->
+    <!-- Placed at the end of the document so the pages load faster -->
+    <script src="cordova.js"></script> 
+    <script src="js/jquery-3.3.1.min.js" type="text/javascript"></script>    
+    <script src="js/bootstrap.min.js" type="text/javascript"></script>
+    <script src="js/jquery.validate.min.js" type="text/javascript"></script>    
+    <script src="js/scripts.js" type="text/javascript"></script>
+<script>
+
+
+function QRonSuccess(result) {
+
+	if (result.cancelled == true) {
+		return false;
+	}
+	var code = result.text;
+	$('#vehicle_vin').val(code);
+	//alert(code);
+}
+
+function QRFailure(message) {
+	alert_error('Barcode Scanner Failed, please check app permissions.'+message, 'Scanner Error');
+}		
+	
+	
+$(document).ready(function () {
+	
+	/*$('#btnBarcode1').on('click', function (e) {
+		try{ cordova.plugins.barcodeScanner.scan(QRonSuccess, QRFailure); }catch (err) { alert_error( err, 'Scanner Error'); }
+	});
+	$('#btnBarcode2').on('click', function (e) {
+		try{ window.plugins.VINBarcodeScanner.scan(QRonSuccess, QRFailure); }catch (err) { alert_error( err, 'Scanner Error'); }
+	});
+	$('#btnBarcode3').on('click', function (e) {
+		try{ cordova.exec(QRonSuccess, QRFailure, 'VinBarScanner', 'scan', []); }catch (err) { alert_error( err, 'Scanner Error'); }
+	});*/
+	
+	
+	
+
+	
+	$.ajax({
+		type: "GET",
+		url: "https://opticoat.com/opt_app/ajax203.php?handler=getCMS&page_id=59",
+		dataType: 'json',
+		beforeSend: function() { $('<div class="formOverlay"><i class="tempLoader fa fa-circle-notch fa-spin"></i></div>').appendTo('body');   },
+		complete: function() { $("div.formOverlay").remove(); },
+	}).done(function(data){
+		
+		if(data.Success == 'true'){
+			$('div.privacy').html(data.HTML);	
+		}
+		
+		
+	}).fail( ajaxError );
+
+
+});	
+	
+	
+</script>
+
+
+  </body>
+</html>
